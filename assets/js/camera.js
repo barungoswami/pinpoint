@@ -11,6 +11,9 @@ $(document).ready(function() {
 
     $.ajax({
       url: 'https://api.einstein.ai/v2/vision/predict',
+      beforeSend: function(request) {
+        request.setRequestHeader('Authority', authorizationToken);
+      },
       method: 'POST',
       data: {
         sampleContent: `@${file}`,
@@ -19,16 +22,16 @@ $(document).ready(function() {
       cache: false,
       contentType: 'multipart/form-data',
       crossDomain: true,
-      // 'Access-Control-Allow-Methods': 'POST',
-      // 'Access-Control-Allow-Headers':
-      //   'Origin, X-Requested-With, Content-Type, Accept',
       headers: {
         Authorization:
-          'BeZDBYOIEZH4SKCMAU25WWD257EPQMUZ4QJZONIJFM7JHVNLLIRTI6MJYYMV45LR5K2A4BAZ6I7N62K3I',
+          'HVBKD5M6YCW74BSJTUDHJTUXQBTM34HVUXCHJBBJ3WUIXXW4HVJQIZOVX7FQZ5GPYEZYPMUCY7EJHLW43F2AXB2UJ2KSQOA6DSUDSFQ',
         'Cache-Control': 'no-cache',
         'Content-Type': 'multipart/form-data',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Credentials': true
       }
+      // 'Access-Control-Allow-Methods': 'POST',
+      // 'Access-Control-Allow-Headers':
+      // 'Origin, X-Requested-With, Content-Type, Accept',
     }).done(function(res) {
       // format res in car format to show image and data
       debugger;
