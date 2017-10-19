@@ -35,7 +35,7 @@ $(document).ready(function() {
       // 'Access-Control-Allow-Headers':
       // 'Origin, X-Requested-With, Content-Type, Accept',
     }).done(function(res) {
-      // format res in car format to show image and data
+      // format res in card format to show image and data
       debugger;
     });
   });
