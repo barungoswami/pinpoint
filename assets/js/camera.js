@@ -10,7 +10,7 @@ $(document).ready(function() {
     var file = event.target.files[0];
 
     $.ajax({
-      url: 'https://api.einstein.ai/v2/vision/predict',
+      url: 'http://api.einstein.ai/v2/vision/predict',
       // beforeSend: function(request) {
       //   request.setRequestHeader('Authority', authorizationToken);
       // },
