@@ -11,9 +11,9 @@ $(document).ready(function() {
 
     $.ajax({
       url: 'https://api.einstein.ai/v2/vision/predict',
-      beforeSend: function(request) {
-        request.setRequestHeader('Authority', authorizationToken);
-      },
+      // beforeSend: function(request) {
+      //   request.setRequestHeader('Authority', authorizationToken);
+      // },
       method: 'POST',
       data: {
         sampleContent: `@${file}`,
