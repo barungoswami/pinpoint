@@ -54,4 +54,3 @@
 ### If the user decides to upload a different type of file (rather than an image), the app needs to be able to support this funtionality rather than returning and error messge of 'unsupported media type.'
 ## Provide further details about returned object.
 ### I want to add a feature the provides the user with some context around the object in the picture. If the picture contains a poisonius plant, I want the app the warn the user not to touch the plant. In addition, I also want to return a wiki link about the object to the user. The wiki link of course containing more information about the object in question.
-
