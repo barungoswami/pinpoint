@@ -44,6 +44,7 @@ var uploadImage = function() {
               var htmlCard = introArticle.append($(`<div class="card"></div>`));
               var htmlContainer = htmlCard.append($(`<div class="container"></div>`));
               var label = probabilities.label.substring(0, probabilities.label.indexOf(","));
+              console.log(label);
               htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${label}.</h4>`))
               // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`))
               var htmlNewImageButton = htmlCard.append($(`<input action="action" type="button" value="Take Another Photo" return false;" />`));

@@ -3,9 +3,10 @@
 <?php
     // Allow from any origin
     if (isset($_SERVER['HTTP_ORIGIN'])) {
-        header('Access-Control-Allow-Origin: https://api.einstein.ai/v2/vision/predict');
-        header('Access-Control-Allow-Credentials: true');
-        header('Access-Control-Max-Age: 86400');    // cache for 1 day
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Credentials: true ");
+        header("Access-Control-Allow-Methods: OPTIONS, GET, POST");
+        header("Access-Control-Allow-Headers: Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
     }
 
     // Access-Control headers are received during OPTIONS requests
