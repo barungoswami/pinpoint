@@ -7,18 +7,18 @@
 # Part 1
 ## Story
 ### When hiking out in nature, many hikers are unaware of the identity of the flora and fauna around them. When a hiker stumbles upon a bird they have never seen, they have no way of knowing what kind of bird they are looking at. In a similar sense, if a hiker stumbles upon a plant species that they cannot quite identify, how can they be sure that the plant is not poisonous to the touch? Many times, hikers get themselves into trouble, or fail to identify the beauty around them due to their lack of knowledge of the outside world. What if there was a way to bridge the gap between the unknown and the known?
+## Solution
 ### Picture this, a hiker takes a photo of something unknown, uploads the photo to an app, and the app return a set of data about the picture they sent it. With PinPoint, it's as easy as taking a picture of the unknown.
 
 ## Solution Architecture Diagrams
 ### Solution Architecture for Static Demo/MVP Working App:
 ![alt text](images/staticSolutionArchitecture.png)
-### Broader view of app
-functionality
+### Broader view of app functionality:
 ### Solution Architecture for FrontEnd/BackEnd (non server-less, relational database) App:
 ![alt text](images/dbSolutionArchitecture.png)
 
 # Part 2
-## Use of Einstein API :
+## Use of Einstein API:
 ### Image Recognition AI using https://api.einstein.ai/v2/vision/predict
 ## Working Prototype:
 #### https://pinpointrei.herokuapp.com/
