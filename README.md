@@ -15,7 +15,7 @@
 ### Broader view of app
 functionality
 ### Solution Architecture for FrontEnd/BackEnd (non server-less, relational database) App:
-![alt text](images/staticSolutionArchitecture.png)
+![alt text](images/dbSolutionArchitecture.png)
 
 # Part 2
 ## Use of Einstein API :
