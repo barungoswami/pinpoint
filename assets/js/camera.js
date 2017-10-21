@@ -21,6 +21,7 @@ var uploadImage = function() {
           url: 'https://api.einstein.ai/v2/vision/predict',
           method: 'POST',
           headers: {
+            'Access-Control-Allow-Origin': '*',
             'Authorization':
               'Bearer X6VERA4KVSPIWMLJ7TXIYBSIIOZNL36E7MZQW7NFADXQ6ZBE6YLWHTGCOR6EPJP43MPC5GJW2CBOAP6IGINTC25NSVYEFFEHCTDUQZY',
             'Cache-Control': 'no-cache'
