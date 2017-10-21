@@ -8,3 +8,5 @@
 
 ##### If you get this error: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘null’ is therefore not allowed access. You can use this Chrome plugin to fix the issue.
 ##### https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+
+![alt text](staticSolutionArchitecture.png)
