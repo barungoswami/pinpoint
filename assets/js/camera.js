@@ -1,5 +1,6 @@
 $(document).ready(function() {
   uploadImage();
+  $('.loader').hide();
 });
 
 var uploadImage = function() {
@@ -16,7 +17,10 @@ var uploadImage = function() {
       formData.append('sampleContent', file);
       formData.append('modelId', 'GeneralImageClassifier');
     }
-    // requestApiServer
+
+    $('.loader').show();
+    $('#upload-button').hide();
+
         $.ajax({
           url: 'https://api.einstein.ai/v2/vision/predict',
           method: 'POST',
@@ -30,6 +34,7 @@ var uploadImage = function() {
           processData: false,
           contentType: false
         }).done(function(res) {
+          $('.loader').hide();
           var hideContent = function(){
               var descriptionText = $('.description');
               var htmlMajor = $('.major');
@@ -43,18 +48,16 @@ var uploadImage = function() {
               var introArticle = $('#intro');
               var htmlCard = introArticle.append($(`<div class="card"></div>`));
               var htmlContainer = htmlCard.append($(`<div class="container"></div>`));
-              var label = probabilities.label.substring(0, probabilities.label.indexOf(","));
-              console.log(label);
+              var label = probabilities.label
+              // take everything after comma in probabilities string =>
+              // .substring(0, probabilities.label.indexOf(","));
               htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${label}.</h4>`))
-              // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`))
+              // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
               var htmlNewImageButton = htmlCard.append($(`<input action="action" type="button" value="Take Another Photo" return false;" />`));
               htmlNewImageButton.click(function(){
                 location.reload();
-              })
-
-              // $('.div_imagetranscrits').html('<img src="data:image/png;base64,' + data + '" />');
+              });
             };
-
             showPhotoCard();
             hideContent();
         });
