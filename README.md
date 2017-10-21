@@ -30,9 +30,11 @@
 #### An example of a cross-origin request: A HTML page served from http://domain-a.com makes an <img> src request for http://domain-b.com/image.jpg. Many pages on the web today load resources like CSS stylesheets, images, and scripts from separate domains, such as content delivery networks (CDNs). For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts. For example, XMLHttpRequest and the Fetch API follow the same-origin policy. This means that a web application using those APIs can only request HTTP resources from the same domain the application was loaded from unless CORS headers are used.
 #### Quick fix to the CORS issue:
 ##### Install Allow-Control-Allow-Origin: *  Plugin from the Chrome Web Store. You can install it here: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
-#### Otherwise, you will get this error: "No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘null’ is therefore not allowed access."
+##### Otherwise, you will get this error: "No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘null’ is therefore not allowed access."
 #### Long-term fix to the CORS issue:
+##### This issue arises when calling to https.
 ##### Using JSONP - this technique has been used for a long time for online services and cross domain requests, but the remote services need to use it. It consists of dynamically adding a script element in the HTML page to execute the request. When the response is received, the corresponding code is parsed and executed as JavaScript.
+##### You can read more here http://restlet.com/company/blog/2016/09/27/how-to-fix-cors-problems/
 
 ### Heroku
 #### Heroku Supports projects built in Node.js, Ruby, Java, PHP, Python, Go, Scala, and Clojure.
