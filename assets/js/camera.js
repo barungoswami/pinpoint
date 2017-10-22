@@ -20,6 +20,7 @@ var uploadImage = function() {
 
     $('.loader').show();
     $('#upload-button').hide();
+    $('#label-button').hide();
 
         $.ajax({
           url: 'https://api.einstein.ai/v2/vision/predict',
@@ -35,6 +36,7 @@ var uploadImage = function() {
           contentType: false
         }).done(function(res) {
           $('.loader').hide();
+          $('#label-button').hide();
           var hideContent = function(){
               var descriptionText = $('.description');
               var htmlMajor = $('.major');
@@ -49,12 +51,16 @@ var uploadImage = function() {
               var htmlCard = introArticle.append($(`<div class="card"></div>`));
               var htmlContainer = htmlCard.append($(`<div class="container"></div>`));
               var label = probabilities.label
+              function returnStringAfterComma(string){
+                return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
+              };
               // take everything after comma in probabilities string =>
               // .substring(0, probabilities.label.indexOf(","));
-              htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${label}.</h4>`))
+              htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
               // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
-              var htmlNewImageButton = htmlCard.append($(`<input action="action" type="button" value="Take Another Photo" return false;" />`));
-              htmlNewImageButton.click(function(){
+              var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
+              $('#intro').on('click', '.another-photo', function(e){
+                e.preventDefault();
                 location.reload();
               });
             };
