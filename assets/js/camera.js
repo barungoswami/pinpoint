@@ -24,9 +24,6 @@ $(document).ready(function() {
           url: 'https://api.einstein.ai/v2/vision/predict',
           method: 'POST',
           headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With",
-            'Access-Control-Allow-Methods': "GET, PUT, POST",
             'Authorization':
               'Bearer 766UJIHQA6LVI2JTWUPW4RMUWFP3PVRDJRAT3PTMWGJ7Q3QVKZJZWDEJI44NGVELPEZO3R5ION6FZWSRRG7FLSH3SGSYBOZRYRN4K5Y',
             'Cache-Control': 'no-cache'
