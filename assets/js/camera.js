@@ -3,10 +3,6 @@ $(document).ready(function() {
   hideLoader();
 });
 
-var hideLoader = function(){
-  $('.loader').hide();
-};
-
 var uploadImage = function() {
   var uploadBtn = $('#upload-button');
   uploadBtn.change(function(event) {
@@ -37,10 +33,6 @@ var uploadImage = function() {
           processData: false,
           contentType: false
         }).done(function(res) {
-          // hideContent();
-          // showPhotoCard();
-          // takeAnotherPhoto();
-
           (function(){
               $('.loader').hide();
               $('#label-button').hide();
@@ -55,14 +47,15 @@ var uploadImage = function() {
               var probabilities = res.probabilities[0];
               var introArticle = $('#intro');
               var htmlCard = introArticle.append($(`<div class="card"></div>`));
-              var htmlContainer = htmlCard.append($(`<div class="container"></div>`));
-              var label = probabilities.label
-              function returnStringAfterComma(string){
-                return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
-              };
-              htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
-              // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
-              var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
+              var fr = new FileReader();
+                fr.onload = function () {
+                    htmlImage = htmlCard.append($('<img src="'+fr.result+'" style="width:100%"/>'));
+                    var htmlContainer = htmlImage.append($(`<div class="container"></div>`));
+                    var label = probabilities.label
+                    htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
+                    var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
+                }
+              fr.readAsDataURL(file);
             })();
 
             (function(){
@@ -75,8 +68,16 @@ var uploadImage = function() {
     });
 };
 
+var hideLoader = function(){
+  $('.loader').hide();
+};
+
 var showLoader = function(){
   $('.loader').show();
   $('#upload-button').hide();
   $('#label-button').hide();
+};
+
+function returnStringAfterComma(string){
+  return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
 };
