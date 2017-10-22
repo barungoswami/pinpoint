@@ -8,8 +8,8 @@
 ?>
 
 <?php
-if (isset($_SERVER['HTTP_ORIGIN'] === 'https://api.einstein.ai/v2/vision/predict')) {
-    header("Access-Control-Allow-Origin: https://api.einstein.ai/v2/vision/predict");
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Credentials: true ");
     header("Access-Control-Allow-Methods: OPTIONS, GET, POST");
     header("Access-Control-Allow-Headers: Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
