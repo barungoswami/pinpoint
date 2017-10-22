@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('.loader').hide();
 });
 
-var uploadImage = function() {
+var uploadImage = function(uploadBtn) {
   var uploadBtn = $('#upload-button');
   uploadBtn.change(function(event) {
     var formData = new FormData();
@@ -35,9 +35,13 @@ var uploadImage = function() {
           processData: false,
           contentType: false
         }).done(function(res) {
-          $('.loader').hide();
-          $('#label-button').hide();
-          var hideContent = function(){
+          hideContent();
+          showPhotoCard();
+          takeAnotherPhoto();
+
+          function hideContent(){
+              $('.loader').hide();
+              $('#label-button').hide();
               var descriptionText = $('.description');
               var htmlMajor = $('.major');
               uploadBtn.hide();
@@ -45,7 +49,7 @@ var uploadImage = function() {
               htmlMajor.text('Photo Results');
             };
 
-            var showPhotoCard = function(){
+            function showPhotoCard(){
               var probabilities = res.probabilities[0];
               var introArticle = $('#intro');
               var htmlCard = introArticle.append($(`<div class="card"></div>`));
@@ -54,18 +58,17 @@ var uploadImage = function() {
               function returnStringAfterComma(string){
                 return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
               };
-
               htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
-              var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
-
+              // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
               var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
+            };
+
+            function takeAnotherPhoto(){
               $('#intro').on('click', '.another-photo', function(e){
                 e.preventDefault();
                 location.reload();
               });
             };
-            showPhotoCard();
-            hideContent();
         });
     });
 };
