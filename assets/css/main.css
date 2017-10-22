@@ -270,6 +270,7 @@ h6 {
   margin: 0 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  margin-bottom: 30px;
 }
 
 h1 a,
@@ -1087,6 +1088,7 @@ button,
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+  margin-bottom: 30px
 }
 
 input[type='submit']:hover,

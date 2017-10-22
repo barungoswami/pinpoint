@@ -42,7 +42,7 @@ var uploadImage = function() {
               var htmlMajor = $('.major');
               uploadBtn.hide();
               descriptionText.hide();
-              htmlMajor.text('Your Photo Results');
+              htmlMajor.text('Photo Results');
             };
 
             var showPhotoCard = function(){
