@@ -21,6 +21,8 @@
 ## Part 2
 ### Use of Einstein API:
 #### Image Recognition AI using https://api.einstein.ai/v2/vision/predict
+##### How the API Works:
+![alt text](images/einsteinVisionAPI.png)
 ### Working Prototype:
 #### https://pinpointrei.herokuapp.com/
 

@@ -28,7 +28,7 @@ $(document).ready(function() {
             'Access-Control-Allow-Headers': "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With",
             'Access-Control-Allow-Methods': "GET, PUT, POST",
             'Authorization':
-              'Bearer X6VERA4KVSPIWMLJ7TXIYBSIIOZNL36E7MZQW7NFADXQ6ZBE6YLWHTGCOR6EPJP43MPC5GJW2CBOAP6IGINTC25NSVYEFFEHCTDUQZY',
+              'Bearer 766UJIHQA6LVI2JTWUPW4RMUWFP3PVRDJRAT3PTMWGJ7Q3QVKZJZWDEJI44NGVELPEZO3R5ION6FZWSRRG7FLSH3SGSYBOZRYRN4K5Y',
             'Cache-Control': 'no-cache'
           },
           data: formData,
