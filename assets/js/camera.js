@@ -25,6 +25,8 @@ var uploadImage = function() {
           method: 'POST',
           headers: {
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With",
+            'Access-Control-Allow-Methods': "GET, PUT, POST",
             'Authorization':
               'Bearer X6VERA4KVSPIWMLJ7TXIYBSIIOZNL36E7MZQW7NFADXQ6ZBE6YLWHTGCOR6EPJP43MPC5GJW2CBOAP6IGINTC25NSVYEFFEHCTDUQZY',
             'Cache-Control': 'no-cache'
