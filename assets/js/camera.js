@@ -1,9 +1,13 @@
 $(document).ready(function() {
   uploadImage();
-  $('.loader').hide();
+  hideLoader();
 });
 
-var uploadImage = function(uploadBtn) {
+var hideLoader = function(){
+  $('.loader').hide();
+};
+
+var uploadImage = function() {
   var uploadBtn = $('#upload-button');
   uploadBtn.change(function(event) {
     var formData = new FormData();
@@ -18,9 +22,7 @@ var uploadImage = function(uploadBtn) {
       formData.append('modelId', 'GeneralImageClassifier');
     }
 
-    $('.loader').show();
-    $('#upload-button').hide();
-    $('#label-button').hide();
+    showLoader();
 
         $.ajax({
           url: 'https://api.einstein.ai/v2/vision/predict',
@@ -35,11 +37,11 @@ var uploadImage = function(uploadBtn) {
           processData: false,
           contentType: false
         }).done(function(res) {
-          hideContent();
-          showPhotoCard();
-          takeAnotherPhoto();
+          // hideContent();
+          // showPhotoCard();
+          // takeAnotherPhoto();
 
-          function hideContent(){
+          (function(){
               $('.loader').hide();
               $('#label-button').hide();
               var descriptionText = $('.description');
@@ -47,9 +49,9 @@ var uploadImage = function(uploadBtn) {
               uploadBtn.hide();
               descriptionText.hide();
               htmlMajor.text('Photo Results');
-            };
+            })();
 
-            function showPhotoCard(){
+            (function(){
               var probabilities = res.probabilities[0];
               var introArticle = $('#intro');
               var htmlCard = introArticle.append($(`<div class="card"></div>`));
@@ -61,14 +63,20 @@ var uploadImage = function(uploadBtn) {
               htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
               // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
               var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
-            };
+            })();
 
-            function takeAnotherPhoto(){
+            (function(){
               $('#intro').on('click', '.another-photo', function(e){
                 e.preventDefault();
                 location.reload();
               });
-            };
+            })();
         });
     });
+};
+
+var showLoader = function(){
+  $('.loader').show();
+  $('#upload-button').hide();
+  $('#label-button').hide();
 };
