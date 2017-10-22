@@ -54,10 +54,10 @@ var uploadImage = function() {
               function returnStringAfterComma(string){
                 return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
               };
-              // take everything after comma in probabilities string =>
-              // .substring(0, probabilities.label.indexOf(","));
+
               htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
-              // var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
+              var htmlImage = htmlCard.append($(`<img src="${file.name}")}" style="width:100%"/>`));
+
               var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
               $('#intro').on('click', '.another-photo', function(e){
                 e.preventDefault();
