@@ -52,11 +52,10 @@
 #### Ionic & React Native
 #### I have never built a fully functioning mobile only app. In the first two days of the project, , I tried to get up an running with either a recap native or ionic app, and then realized my passion is for web and chose to develop a mobile responsive web application instead.
 
-
 ## Improvements:
 ### Upload multiple images at the same time.
 #### Allow user to upload several images at a time, and get results for all photos.
-### Give users to choose between text, file etc.
+### Give users the ability to choose between text, file etc.
 #### If the user decides to upload a different type of file (rather than an image), the app needs to be able to support this functionality rather than returning and error message of 'unsupported media type.'
 ### Provide further details about returned object.
 #### I want to add a feature the provides the user with some context around the object in the picture. If the picture contains a poisonous plant, I want the app the warn the user not to touch the plant. In addition, I also want to return a wiki link about the object to the user. The wiki link of course containing more information about the object in question.
