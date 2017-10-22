@@ -55,6 +55,8 @@
 #### I have never built a fully functioning mobile only app. In the first two days of the project, , I tried to get up an running with either a recap native or ionic app, and then realized my passion is for web and chose to develop a mobile responsive web application instead.
 
 ## Improvements:
+### Add Feedback to and Retrain a Model
+#### By sending an image to https://api.einstein.ai/v2/vision/feedback, you can use the feedback API to add a misclassified image with the correct label to the dataset from which the model was created. Then, after you add feedback images to the correct classes in the dataset, you retrain the dataset to incorporate the new data into the model with the retrain API https://api.einstein.ai/v2/vision/retrain.
 ### Upload multiple images at the same time.
 #### Allow user to upload several images at a time, and get results for all photos.
 ### Give users the ability to choose between text, file etc.
