@@ -3,7 +3,7 @@ $(document).ready(function() {
   hideLoader();
 });
 
-var uploadImage = function() {
+ function uploadImage() {
   var uploadBtn = $('#upload-button');
   uploadBtn.change(function(event) {
     var formData = new FormData();
@@ -70,11 +70,11 @@ var uploadImage = function() {
     });
 };
 
-var hideLoader = function(){
+function hideLoader(){
   $('.loader').hide();
 };
 
-var showLoader = function(){
+function showLoader(){
   $('.loader').show();
   $('#upload-button').hide();
   $('#label-button').hide();
