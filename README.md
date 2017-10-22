@@ -2,7 +2,7 @@
 ## REI Hiking Application
 ### Responsive Web/Mobile Einstein Vision Application
 #### PinPoint is an Image Recognition Application that allows users to take a photo and learn the details of the photo contents. Meant to be used while hiking, this Application aims to bridge the gap between objects in nature that hiker's know about, and those they do not know about. It's as simple as taking a photo of the unknown.
-##### For Demo/MVP purposes, please use Chrome and Install  the 'Allow-Control-Allow-Origin: * ' Chrome Plugin.
+##### For Demo/MVP purposes, please use Chrome and Install the 'Allow-Control-Allow-Origin: * ' Chrome Extension.
 
 ## Part 1
 ### Story
@@ -30,11 +30,13 @@
 #### An example of a cross-origin request: A HTML page served from http://domain-a.com makes an <img> src request for http://domain-b.com/image.jpg. Many pages on the web today load resources like CSS stylesheets, images, and scripts from separate domains, such as content delivery networks (CDNs). For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts. For example, XMLHttpRequest and the Fetch API follow the same-origin policy. This means that a web application using those APIs can only request HTTP resources from the same domain the application was loaded from unless CORS headers are used.
 #### Quick fix to the CORS issue:
 ##### Install Allow-Control-Allow-Origin: *  Plugin from the Chrome Web Store. You can install it here: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+##### You can also you CORS Toggle Chrome Extension, which allows you to toggle CORS on and off. You can install it here: https://chrome.google.com/webstore/detail/cors-toggle/jioikioepegflmdnbocfhgmpmopmjkim
 ##### Otherwise, you will get this error: "No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘null’ is therefore not allowed access."
 #### Long-term fix to the CORS issue:
-##### This issue arises when calling to https.
 ##### Using JSONP - this technique has been used for a long time for online services and cross domain requests, but the remote services need to use it. It consists of dynamically adding a script element in the HTML page to execute the request. When the response is received, the corresponding code is parsed and executed as JavaScript.
 ##### You can read more here http://restlet.com/company/blog/2016/09/27/how-to-fix-cors-problems/
+##### Setting CORS headers correctly (everyone seems to have a different opinion and the only fix I found was the Chrome Extension).
+#### Mobile CORS fix:
 
 ### Heroku
 #### Heroku Supports projects built in Node.js, Ruby, Java, PHP, Python, Go, Scala, and Clojure.
