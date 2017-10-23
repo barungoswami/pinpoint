@@ -8,9 +8,9 @@ $(document).ready(function() {
   uploadBtn.change(function(event) {
     var formData = new FormData();
     var file = event.target.files[0];
+    var reader = new FileReader();
 
-    if ( window.FileReader ) {
-      reader = new FileReader();
+    if ( file ) {
       reader.readAsDataURL(file);
     }
     if (formData) {
@@ -25,7 +25,7 @@ $(document).ready(function() {
           method: 'POST',
           headers: {
             'Authorization':
-              'Bearer 766UJIHQA6LVI2JTWUPW4RMUWFP3PVRDJRAT3PTMWGJ7Q3QVKZJZWDEJI44NGVELPEZO3R5ION6FZWSRRG7FLSH3SGSYBOZRYRN4K5Y',
+              'Bearer RIWQF2GESRUBC4C6PU6M6QJN2ZBOE37RYGTFHQ5ACMTGCP6LWK32YLLS2WNGMVLU4DSO7HTNWWCL426DLFMTSSBUWZH6SXTFG2QXGMY',
             'Cache-Control': 'no-cache'
           },
           data: formData,
@@ -56,7 +56,7 @@ $(document).ready(function() {
                 }
               fr.readAsDataURL(file);
             })();
-          
+
             (function(){
               $('#intro').on('click', '.another-photo', function(e){
                 e.preventDefault();
