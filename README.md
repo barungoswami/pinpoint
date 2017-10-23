@@ -24,6 +24,8 @@
 ## Part 2
 ### Use of Einstein API:
 #### Image Recognition AI using https://api.einstein.ai/v2/vision/predict
+##### List of Images already trained by model:
+https://metamind.readme.io/v2/page/general-image-model-class-list
 ##### How the API Works:
 ![alt text](images/einsteinVisionAPI.png)
 ### Working Prototype:
@@ -60,6 +62,9 @@ https://www.html5rocks.com/en/tutorials/cors/
 ### FileReader() - Uploading Files with AJAX
 #### When calling the Einstein Vision API, I kept getting a '400 Bad Request' response no matter what information I seemed to pass the AJAX call.
 #### I had to pass the file object to the reader.readAsDataURL method. This creates a data url for the uploaded image. The data url isn’t passed back from the function, instead, the data url will be part of an event object. Then I needed to register a function on the reader.onloadend event. This function takes an event object, by which gets the data url: it’s at e.target.result (e.target is the reader object) but I had issues when using reader in place of e.target inside this function). We’re just going to pass this data url to our showUploadedItem function. Lastly, if the browser supports FormData, formdata will be a FormData object. So with the FormData object, I call the append method - the purpose of a FormData object is to hold values that you’re submitting via a form; so, the append method simply takes a key and a value.
+#### It also appears that IOS8 has some sort of bug that prevents any sort of file uploads. There is no known workaround - thus making it hard for FileReader to read any files associated with a <input type="file">.
+#### Here is an article explaining in more detail:
+https://github.com/FineUploader/fine-uploader/issues/1284
 
 ### Mobile App
 #### Ionic & React Native

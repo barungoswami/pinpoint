@@ -10,7 +10,7 @@ $(document).ready(function() {
     var file = event.target.files[0];
     var reader = new FileReader();
 
-    if ( file ) {
+    if (file) {
       reader.readAsDataURL(file);
     }
     if (formData) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
                     htmlImage = htmlCard.append($('<img src="'+fr.result+'" style="width:100%"/>'));
                     var htmlContainer = htmlImage.append($(`<div class="container"></div>`));
                     var label = probabilities.label
-                    htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringAfterComma(label)}.</h4>`))
+                    htmlContainer.append($(`<h4 class="label">PinPoint predicted that this is a ${returnStringBeforeComma(label)}.</h4>`))
                     var htmlNewImageButton = htmlContainer.append($(`<button class="another-photo" type="button">Take Another Photo</button>`));
                 }
               fr.readAsDataURL(file);
@@ -77,6 +77,6 @@ function showLoader(){
   $('#label-button').hide();
 };
 
-function returnStringAfterComma(string){
+function returnStringBeforeComma(string){
   return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
 };
