@@ -45,6 +45,7 @@
 ##### Including Allow-Control-Allow-Origin:* to php headers.
 ##### Creating the XMLHttpRequest object. More information here:
 https://www.html5rocks.com/en/tutorials/cors/
+##### Using Charles proxy - https://www.charlesproxy.com/
 
 ### Heroku
 #### Heroku Supports projects built in Node.js, Ruby, Java, PHP, Python, Go, Scala, and Clojure.
@@ -69,3 +70,11 @@ https://www.html5rocks.com/en/tutorials/cors/
 #### If the user decides to upload a different type of file (rather than an image), the app needs to be able to support this functionality rather than returning and error message of 'unsupported media type.'
 ### Provide further details about returned object.
 #### I want to add a feature the provides the user with some context around the object in the picture. If the picture contains a poisonous plant, I want the app the warn the user not to touch the plant. In addition, I also want to return a wiki link about the object to the user. The wiki link of course containing more information about the object in question.
+
+## Final Thoughts:
+#### I learned A LOT, through building this project, so thank you for the opporutnity to engage in such an creative and engaging project - it was worth every second. After learning all about the Einstein Vision AI, how to train a dataset, create a model, add feedback, retrain the model, figure out the correct way to format the curl command into ajax headers and formdata, how to successfully upload images using fileReader, hwo to successfully upload images from a mobile phone, learning how to deploy a static site to Heroku, and last but CERTAINLY not least, how to whitelist an origin for salesforce and bypass CORS permissions, I realized there is a lot I would change about this project right from the get-go.
+##### The biggest thing I would have changes would have to be not having enough time to build a backend. Having a backend would have solved a multitude of my problems. I believe that the subdomain of my static site is "unreadable" to the whitelisting, and therefore still does not allow CORS. With a backend, I could have set specific routes which would have allowed all subdomains of my origin to be accessible (when whitelisting you can use the * command to allow this feature).
+##### I hope you enjoyed using Pinpoint, email me if you have any questions :)
+##### callielynne3@gmail.com
+
+### </> with <3 by calliecodes  
