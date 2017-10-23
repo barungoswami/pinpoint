@@ -1,6 +1,7 @@
 $(document).ready(function() {
   uploadImage();
   hideLoader();
+  callOtherDomain();
 });
 
  function uploadImage() {
@@ -80,3 +81,14 @@ function showLoader(){
 function returnStringAfterComma(string){
   return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
 };
+
+var invocation = new XMLHttpRequest();
+var url = 'https://api.einstein.ai/v2/vision/predict';
+function callOtherDomain(){
+  if(invocation) {
+    invocation.open('GET', url, true);
+    invocation.withCredentials = true;
+    invocation.onreadystatechange = handler;
+    invocation.send();
+  }
+}

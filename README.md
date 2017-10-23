@@ -14,7 +14,7 @@
 #### Solution Architecture for Static Demo/MVP Working App:
 ![alt text](images/staticSolutionArchitecture.png)
 ### Broader view of app functionality:
-#### Add Node.js Backend with PostgreSQL Database
+#### Add Node.js Backend with PostgreSQL Database, Express, and use Super Agent.
 #### Solution Architecture for FrontEnd/BackEnd (relational database) App:
 ![alt text](images/dbSolutionArchitecture.png)
 
@@ -31,7 +31,7 @@
 #### CORS is a mechanism that uses additional HTTP headers to let a user agent gain permission to access selected resources from a server on a different origin (domain) than the site currently in use. A user agent makes a cross-origin HTTP request when it requests a resource from a different domain, protocol, or port than the one from which the current document originated.
 #### An example of a cross-origin request: A HTML page served from http://domain-a.com makes an <img> src request for http://domain-b.com/image.jpg. Many pages on the web today load resources like CSS stylesheets, images, and scripts from separate domains, such as content delivery networks (CDNs). For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts. For example, XMLHttpRequest and the Fetch API follow the same-origin policy. This means that a web application using those APIs can only request HTTP resources from the same domain the application was loaded from unless CORS headers are used.
 #### Quick fix to the CORS issue:
-##### Install Allow-Control-Allow-Origin: *  Plugin from the Chrome Web Store. You can install it here: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+##### Install Allow-Control-Allow-Origin: *  Extension from the Chrome Web Store. You can install it here: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
 ##### You can also you CORS Toggle Chrome Extension, which allows you to toggle CORS on and off. You can install it here: https://chrome.google.com/webstore/detail/cors-toggle/jioikioepegflmdnbocfhgmpmopmjkim
 ##### Otherwise, you will get this error: "No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘null’ is therefore not allowed access."
 #### Long-term fix to the CORS issue:
@@ -39,6 +39,12 @@
 ##### You can read more here http://restlet.com/company/blog/2016/09/27/how-to-fix-cors-problems/
 ##### Setting CORS headers correctly (everyone seems to have a different opinion and the only fix I found was the Chrome Extension).
 #### Mobile CORS fix:
+##### With the team, I would love to work collaboratively to solve this problem.
+##### Techniques I tried in order to debug CORS error on mobile chrome:
+##### Whitelisting the origin on Salesforce. You can read more here: https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/extend_code_cors.htm
+##### Including Allow-Control-Allow-Origin:* to php headers.
+##### Creating the XMLHttpRequest object. More information here:
+https://www.html5rocks.com/en/tutorials/cors/
 
 ### Heroku
 #### Heroku Supports projects built in Node.js, Ruby, Java, PHP, Python, Go, Scala, and Clojure.
@@ -52,7 +58,7 @@
 
 ### Mobile App
 #### Ionic & React Native
-#### I have never built a fully functioning mobile only app. In the first two days of the project, , I tried to get up an running with either a recap native or ionic app, and then realized my passion is for web and chose to develop a mobile responsive web application instead.
+#### I have never built a fully functioning native or mobile only app. In the first two days of the project, I tried to get up an running with either a react native or ionic app, and then realized my passion is for web and chose to develop a mobile responsive web application instead. However, I would love to eventually learn mobile development with react native. Using the Expo app to run from the QR code created when firing up npm start in the react native app directory, I fell in love with the simulators and native components. Lastly, I sense that react native while become the de facto way to even create a web application, so I would like to move in this direction soon.
 
 ## Improvements:
 ### Add Feedback to and Retrain a Model
