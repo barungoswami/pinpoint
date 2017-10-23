@@ -57,12 +57,7 @@ $(document).ready(function() {
               fr.readAsDataURL(file);
             })();
 
-            (function(){
-              $('#intro').on('click', '.another-photo', function(e){
-                e.preventDefault();
-                location.reload();
-              });
-            })();
+          takeAnotherPhoto();
         });
     });
 };
@@ -79,4 +74,11 @@ function showLoader(){
 
 function returnStringBeforeComma(string){
   return string.includes(",") ? string.substring(0, string.indexOf(",")) : string;
+};
+
+function takeAnotherPhoto(){
+  $('#intro').on('click', '.another-photo', function(e){
+    e.preventDefault();
+    location.reload();
+  });
 };
