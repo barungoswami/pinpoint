@@ -25,6 +25,7 @@
 ![alt text](images/einsteinVisionAPI.png)
 ### Working Prototype:
 #### https://pinpointrei.herokuapp.com/
+##### By using one of the photos from the images folder, you will get the best results.
 
 ## Challenges
 ### CORS - Cross-Origin Resource Sharing
